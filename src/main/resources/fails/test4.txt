@@ -1,0 +1,10 @@
+// multiline
+x:= 5
+/* We do what we must,
+   Because we can.
+
+   For the good of all of us.
+   /*
+   Except the ones who are dead.
+*/
+i := am_still_alive

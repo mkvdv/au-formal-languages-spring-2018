@@ -1,0 +1,2 @@
+x := name
+y := 2name // 2 and name, distinct tokens, not identifier 2name

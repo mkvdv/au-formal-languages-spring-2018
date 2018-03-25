@@ -1,0 +1,7 @@
+while 1
+do {
+    read x;
+    if x != 5 && x > 6.01e9 || x == deadbeaf
+    then x := 1;
+    else exit -1
+}
