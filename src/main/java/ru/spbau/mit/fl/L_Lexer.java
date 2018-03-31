@@ -11,13 +11,14 @@ import org.antlr.v4.runtime.dfa.DFA;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class L_Lexer extends Lexer {
-	public static final int
+    public static final int
             IF = 1, THEN = 2, ELSE = 3, WHILE = 4, DO = 5, READ = 6, WRITE = 7, TRUE = 8, FALSE = 9,
             LINE_COMMENT = 10, MULTILINE_COMMENT_EXIT = 11, DecimalFloatingPointLiteral = 12,
             DecimalIntegerLiteral = 13, ADD = 14, MINUS = 15, MUL = 16, DIV = 17, MOD = 18, ASSIGN = 19,
             LEQ = 20, GEQ = 21, LESS = 22, GREATER = 23, EQ = 24, NEQ = 25, AND = 26, OR = 27, LP = 28,
             RP = 29, SEMI = 30, LBR = 31, RBR = 32, ID = 33, WS = 34;
-	public static final String[] ruleNames = {
+    public static final int IN_MULTI_COMMENT = 1;
+    public static final String[] ruleNames = {
             "IF", "THEN", "ELSE", "WHILE", "DO", "READ", "WRITE", "TRUE", "FALSE",
             "NL", "LINE_COMMENT", "MULTILINE_COMMENT", "MULTILINE_COMMENT_EXIT", "CANT_EXIT",
             "WE_NEED_TO_GO_DEEPER", "COMMENT", "DecimalFloatingPointLiteral", "DecimalIntegerLiteral",
@@ -26,13 +27,13 @@ public class L_Lexer extends Lexer {
             "DigitsAndUnderscores", "DigitOrUnderscore", "Underscores", "ADD", "MINUS",
             "MUL", "DIV", "MOD", "ASSIGN", "LEQ", "GEQ", "LESS", "GREATER", "EQ",
             "NEQ", "AND", "OR", "LP", "RP", "SEMI", "LBR", "RBR", "ID", "WS"
-	};
-	/**
-	 * @deprecated Use {@link #VOCABULARY} instead.
-	 */
-	@Deprecated
-	public static final String[] tokenNames;
-	public static final String _serializedATN =
+    };
+    /**
+     * @deprecated Use {@link #VOCABULARY} instead.
+     */
+    @Deprecated
+    public static final String[] tokenNames;
+    public static final String _serializedATN =
             "\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\2$\u0163\b\1\b\1\4" +
                     "\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n" +
                     "\4\13\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22" +
@@ -155,39 +156,60 @@ public class L_Lexer extends Lexer {
                     "\u00ce\u00d1\u00d4\u00d9\u00dc\u00e1\u00e5\u00e9\u00ed\u00f5\u0102\u0108" +
                     "\u010d\u0111\u0115\u011b\u011f\u0124\u0157\u015d\u015f\n\3\r\2\5\2\2\7" +
                     "\3\2\3\16\3\6\2\2\3\17\4\3\20\5\b\2\2";
-    public static final int IN_MULTI_COMMENT = 1;
-	public static final ATN _ATN =
+    public static final ATN _ATN =
             new ATNDeserializer().deserialize(_serializedATN.toCharArray());
-	protected static final DFA[] _decisionToDFA;
-	protected static final PredictionContextCache _sharedContextCache =
+    protected static final DFA[] _decisionToDFA;
+    protected static final PredictionContextCache _sharedContextCache =
             new PredictionContextCache();
-	private static final String[] _LITERAL_NAMES = {
+    private static final String[] _LITERAL_NAMES = {
             null, "'if'", "'then'", "'else'", "'while'", "'do'", "'read'", "'write'",
             "'true'", "'false'", null, null, null, null, "'+'", "'-'", "'*'", "'/'",
             "'%'", "':='", "'<='", "'>='", "'<'", "'>'", "'=='", "'!='", "'&&'", "'||'",
             "'('", "')'", "';'", "'{'", "'}'"
     };
-    public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
-	private static final String[] _SYMBOLIC_NAMES = {
+    private static final String[] _SYMBOLIC_NAMES = {
             null, "IF", "THEN", "ELSE", "WHILE", "DO", "READ", "WRITE", "TRUE", "FALSE",
             "LINE_COMMENT", "MULTILINE_COMMENT_EXIT", "DecimalFloatingPointLiteral",
             "DecimalIntegerLiteral", "ADD", "MINUS", "MUL", "DIV", "MOD", "ASSIGN",
             "LEQ", "GEQ", "LESS", "GREATER", "EQ", "NEQ", "AND", "OR", "LP", "RP",
             "SEMI", "LBR", "RBR", "ID", "WS"
-	};
-	static {
-		tokenNames = new String[_SYMBOLIC_NAMES.length];
-		for (int i = 0; i < tokenNames.length; i++) {
-			tokenNames[i] = VOCABULARY.getLiteralName(i);
-			if (tokenNames[i] == null) {
-				tokenNames[i] = VOCABULARY.getSymbolicName(i);
-			}
+    };
+    public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+    public static String[] modeNames = {
+            "DEFAULT_MODE", "IN_MULTI_COMMENT"
+    };
 
-			if (tokenNames[i] == null) {
-				tokenNames[i] = "<INVALID>";
-			}
-		}
-	}
+    static {
+        RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION);
+    }
+
+    static {
+        tokenNames = new String[_SYMBOLIC_NAMES.length];
+        for (int i = 0; i < tokenNames.length; i++) {
+            tokenNames[i] = VOCABULARY.getLiteralName(i);
+            if (tokenNames[i] == null) {
+                tokenNames[i] = VOCABULARY.getSymbolicName(i);
+            }
+
+            if (tokenNames[i] == null) {
+                tokenNames[i] = "<INVALID>";
+            }
+        }
+    }
+
+    static {
+        _decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
+        for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
+            _decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
+        }
+    }
+
+    int nested_multiline_comment_count = 0;
+
+    public L_Lexer(CharStream input) {
+        super(input);
+        _interp = new LexerATNSimulator(this, _ATN, _decisionToDFA, _sharedContextCache);
+    }
 
     @Override
     @Deprecated
@@ -201,56 +223,34 @@ public class L_Lexer extends Lexer {
         return VOCABULARY;
     }
 
-    public static String[] modeNames = {
-            "DEFAULT_MODE", "IN_MULTI_COMMENT"
-    };
-
-    static {
-        RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION);
-    }
-
-	static {
-		_decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
-		for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
-			_decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
-		}
-	}
-
-    int nested_multiline_comment_count = 0;
-
-	public L_Lexer(CharStream input) {
-		super(input);
-        _interp = new LexerATNSimulator(this, _ATN, _decisionToDFA, _sharedContextCache);
-	}
-
-	@Override
+    @Override
     public String getGrammarFileName() {
         return "L_Lexer.g4";
     }
 
-	@Override
+    @Override
     public String[] getRuleNames() {
         return ruleNames;
     }
 
-	@Override
+    @Override
     public String getSerializedATN() {
         return _serializedATN;
     }
 
-	@Override
+    @Override
     public String[] getModeNames() {
         return modeNames;
     }
 
-	@Override
+    @Override
     public ATN getATN() {
         return _ATN;
     }
 
-	@Override
-	public void action(RuleContext _localctx, int ruleIndex, int actionIndex) {
-		switch (ruleIndex) {
+    @Override
+    public void action(RuleContext _localctx, int ruleIndex, int actionIndex) {
+        switch (ruleIndex) {
             case 11:
                 MULTILINE_COMMENT_action((RuleContext) _localctx, actionIndex);
                 break;
@@ -263,65 +263,65 @@ public class L_Lexer extends Lexer {
             case 14:
                 WE_NEED_TO_GO_DEEPER_action((RuleContext) _localctx, actionIndex);
                 break;
-		}
-	}
+        }
+    }
 
-	private void MULTILINE_COMMENT_action(RuleContext _localctx, int actionIndex) {
-		switch (actionIndex) {
+    private void MULTILINE_COMMENT_action(RuleContext _localctx, int actionIndex) {
+        switch (actionIndex) {
             case 0:
                 nested_multiline_comment_count = 1;
                 break;
-		}
-	}
+        }
+    }
 
     private void MULTILINE_COMMENT_EXIT_action(RuleContext _localctx, int actionIndex) {
-		switch (actionIndex) {
+        switch (actionIndex) {
             case 1:
                 nested_multiline_comment_count -= 1;
                 break;
-		}
-	}
+        }
+    }
 
-	private void CANT_EXIT_action(RuleContext _localctx, int actionIndex) {
-		switch (actionIndex) {
+    private void CANT_EXIT_action(RuleContext _localctx, int actionIndex) {
+        switch (actionIndex) {
             case 2:
                 nested_multiline_comment_count -= 1;
                 break;
-		}
-	}
+        }
+    }
 
-	private void WE_NEED_TO_GO_DEEPER_action(RuleContext _localctx, int actionIndex) {
-		switch (actionIndex) {
+    private void WE_NEED_TO_GO_DEEPER_action(RuleContext _localctx, int actionIndex) {
+        switch (actionIndex) {
             case 3:
                 nested_multiline_comment_count += 1;
                 break;
-		}
-	}
+        }
+    }
 
-	@Override
-	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
-		switch (ruleIndex) {
+    @Override
+    public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
+        switch (ruleIndex) {
             case 12:
                 return MULTILINE_COMMENT_EXIT_sempred((RuleContext) _localctx, predIndex);
             case 13:
                 return CANT_EXIT_sempred((RuleContext) _localctx, predIndex);
-		}
-		return true;
-	}
+        }
+        return true;
+    }
 
     private boolean MULTILINE_COMMENT_EXIT_sempred(RuleContext _localctx, int predIndex) {
-		switch (predIndex) {
+        switch (predIndex) {
             case 0:
                 return nested_multiline_comment_count == 1;
-		}
-		return true;
-	}
+        }
+        return true;
+    }
 
-	private boolean CANT_EXIT_sempred(RuleContext _localctx, int predIndex) {
-		switch (predIndex) {
+    private boolean CANT_EXIT_sempred(RuleContext _localctx, int predIndex) {
+        switch (predIndex) {
             case 1:
                 return nested_multiline_comment_count > 1;
-		}
-		return true;
-	}
+        }
+        return true;
+    }
 }

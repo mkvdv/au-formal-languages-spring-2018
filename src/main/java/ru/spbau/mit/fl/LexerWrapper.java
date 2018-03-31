@@ -114,9 +114,9 @@ public class LexerWrapper {
 
         TokenLineComment(Token tok) {
             super(tok);
-
             // preprocess for beauty output
-            value = tok.getText().substring(0, value.length() - 1);
+            String s = tok.getText();
+            value = s.substring(0, s.length() - 1);
         }
 
         @Override
