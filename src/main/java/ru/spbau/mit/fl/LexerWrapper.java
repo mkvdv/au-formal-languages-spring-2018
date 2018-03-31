@@ -36,6 +36,15 @@ public class LexerWrapper {
                 res = new TokenId(newTok);
                 break;
 
+            case L_Lexer.LINE_COMMENT:
+                res = new TokenLineComment(newTok);
+                break;
+
+
+            case L_Lexer.MULTILINE_COMMENT_EXIT:
+                res = new TokenMultiLineComment(newTok);
+                break;
+
             default:
                 res = new TokenKW(newTok);
                 break;
@@ -89,6 +98,38 @@ public class LexerWrapper {
         private String value;
 
         TokenId(Token tok) {
+            super(tok);
+            value = tok.getText();
+        }
+
+        @Override
+        public void print() {
+            System.out.printf("%s(%s, %d, %d, %d)",
+                    type, value, lineno, ixCharBegin, ixCharEnd);
+        }
+    }
+
+    static class TokenLineComment extends TokenPrintable {
+        private String value;
+
+        TokenLineComment(Token tok) {
+            super(tok);
+
+            // preprocess for beauty output
+            value = tok.getText().substring(0, value.length() - 1);
+        }
+
+        @Override
+        public void print() {
+            System.out.printf("%s(%s, %d, %d, %d)",
+                    type, value, lineno, ixCharBegin, ixCharEnd);
+        }
+    }
+
+    static class TokenMultiLineComment extends TokenPrintable {
+        private String value;
+
+        TokenMultiLineComment(Token tok) {
             super(tok);
             value = tok.getText();
         }

@@ -26,17 +26,16 @@ FALSE : 'false';
 fragment
 NL: ('\n'|'\r'|'\r\n');
 
-LINE_COMMENT  : '//' .*? NL -> skip  ;
+LINE_COMMENT  : '//' .*? NL; // last line must be NL -- POSIX
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-MULTILINE_COMMENT : '/*' { nested_multiline_comment_count = 1; } -> more, pushMode(IN_MULTI_COMMENT)
- ;
+MULTILINE_COMMENT : '/*' { nested_multiline_comment_count = 1; } -> more, pushMode(IN_MULTI_COMMENT);
 
 mode IN_MULTI_COMMENT;
-EXIT :
+MULTILINE_COMMENT_EXIT :
     '*/'
     { nested_multiline_comment_count == 1 }? // evaluate predicate in runtime
-    { nested_multiline_comment_count -= 1; } -> popMode, skip  ;
+    { nested_multiline_comment_count -= 1; } -> popMode; //, skip  ;
 
 CANT_EXIT :
     '*/'
