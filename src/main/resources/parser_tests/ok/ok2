@@ -1,0 +1,18 @@
+main(argc, argv){
+    if (argc >= 5)
+    then {
+        write 5 ** 4.0;
+    } else {
+
+    }
+
+    while(false) do {
+        main(argc, argv);
+    }
+
+}
+
+read argc;
+read argv;
+main(argc, argv);
+foo();

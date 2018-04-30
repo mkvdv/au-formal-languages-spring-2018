@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.Token;
 abstract class TokenPrintable {
     protected int ixCharBegin, ixCharEnd, lineno;
     protected String type;
+    protected String text;
 
     TokenPrintable(Token tok) {
         lineno = tok.getLine();
@@ -13,5 +14,12 @@ abstract class TokenPrintable {
         type = L_Lexer.VOCABULARY.getSymbolicName(tok.getType());
     }
 
-    abstract void print();
+    void print() {
+        System.out.print(text);
+    }
+
+    String getText() {
+        assert text != null;
+        return text;
+    }
 }

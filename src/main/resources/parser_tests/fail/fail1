@@ -1,0 +1,11 @@
+foo() {
+    x := 5;
+
+    b := <= x;
+    if (x) then { 4 } // no else
+    false
+}
+
+foo(,);
+
+bar() {} // no, nelzja tut define function

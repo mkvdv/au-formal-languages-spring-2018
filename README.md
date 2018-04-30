@@ -11,7 +11,7 @@
 Требования:
 * Java 8 (openjdk ставится скриптом, если у вас Ubuntu)
 * gradle (и он тоже)
-* ANTLR4 (если нужно заново сгененрировать L_Lexer.java -- он тоже ставится скриптом)
+* ANTLR4 (если нужно заново сгененрировать L_Lexer.java -- он тоже ставится скриптом) `теперь он качается не через apt`
 
 ```
 chmod +x install_java_gradle_antlr.sh
@@ -20,5 +20,5 @@ sudo ./install_java_gradle_antlr.sh # load gradle using apt
 ### after installation
 
 chmod +x run.sh # launch gradle with path to test file
-./run.sh src/main/resources/ok/ok1 # or other path to file
+./run.sh src/main/resources/parser_tests/ok/ok1 # or other path to file
 ```

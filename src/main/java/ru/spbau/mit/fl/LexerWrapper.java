@@ -12,43 +12,49 @@ public class LexerWrapper {
         newTok = lex.nextToken();
     }
 
-    boolean hasNext() {
-        return newTok.getType() != Token.EOF;
-    }
-
-    TokenPrintable nextTok() {
+    static TokenPrintable getPrintableToken(Token token) {
         TokenPrintable res = null;
 
-        switch (newTok.getType()) {
+        switch (token.getType()) {
             case Token.EOF:
                 assert false;
                 break;
 
             case L_Lexer.DecimalIntegerLiteral:
-                res = new TokenDecimal(newTok);
+                res = new TokenDecimal(token);
                 break;
 
             case L_Lexer.DecimalFloatingPointLiteral:
-                res = new TokenFloating(newTok);
+                res = new TokenFloating(token);
                 break;
 
             case L_Lexer.ID:
-                res = new TokenId(newTok);
+                res = new TokenId(token);
                 break;
 
             case L_Lexer.LINE_COMMENT:
-                res = new TokenLineComment(newTok);
+                res = new TokenLineComment(token);
                 break;
 
 
             case L_Lexer.MULTILINE_COMMENT_EXIT:
-                res = new TokenMultiLineComment(newTok);
+                res = new TokenMultiLineComment(token);
                 break;
 
             default:
-                res = new TokenKW(newTok);
+                res = new TokenKW(token);
                 break;
         }
+
+        return res;
+    }
+
+    boolean hasNext() {
+        return newTok.getType() != Token.EOF;
+    }
+
+    TokenPrintable nextTok() {
+        TokenPrintable res = LexerWrapper.getPrintableToken(newTok);
 
         // update
         newTok = lex.nextToken();
@@ -69,11 +75,8 @@ public class LexerWrapper {
                 s = s.substring(0, s.length() - 1);
             }
             value = Long.parseLong(s);
-        }
 
-        @Override
-        public void print() {
-            System.out.printf("%s(%d, %d, %d, %d)",
+            text = String.format("%s(%d, %d, %d, %d)",
                     type, value, lineno, ixCharBegin, ixCharEnd);
         }
     }
@@ -84,11 +87,7 @@ public class LexerWrapper {
         TokenFloating(Token tok) {
             super(tok);
             value = Double.parseDouble(tok.getText().replace("_", ""));
-        }
-
-        @Override
-        public void print() {
-            System.out.printf("%s(%f, %d, %d, %d)",
+            text = String.format("%s(%f, %d, %d, %d)",
                     type, value, lineno, ixCharBegin, ixCharEnd);
         }
     }
@@ -100,11 +99,7 @@ public class LexerWrapper {
         TokenId(Token tok) {
             super(tok);
             value = tok.getText();
-        }
-
-        @Override
-        public void print() {
-            System.out.printf("%s(%s, %d, %d, %d)",
+            text = String.format("%s(%s, %d, %d, %d)",
                     type, value, lineno, ixCharBegin, ixCharEnd);
         }
     }
@@ -117,11 +112,7 @@ public class LexerWrapper {
             // preprocess for beauty output
             String s = tok.getText();
             value = s.substring(0, s.length() - 1);
-        }
-
-        @Override
-        public void print() {
-            System.out.printf("%s(%s, %d, %d, %d)",
+            text = String.format("%s(%s, %d, %d, %d)",
                     type, value, lineno, ixCharBegin, ixCharEnd);
         }
     }
@@ -132,11 +123,7 @@ public class LexerWrapper {
         TokenMultiLineComment(Token tok) {
             super(tok);
             value = tok.getText();
-        }
-
-        @Override
-        public void print() {
-            System.out.printf("%s(%s, %d, %d, %d)",
+            text = String.format("%s(%s, %d, %d, %d)",
                     type, value, lineno, ixCharBegin, ixCharEnd);
         }
     }
@@ -144,11 +131,7 @@ public class LexerWrapper {
     static class TokenKW extends TokenPrintable {
         TokenKW(Token tok) {
             super(tok);
-        }
-
-        @Override
-        public void print() {
-            System.out.printf("%s(%d, %d, %d)",
+            text = String.format("%s(%d, %d, %d)",
                     type, lineno, ixCharBegin, ixCharEnd);
         }
     }

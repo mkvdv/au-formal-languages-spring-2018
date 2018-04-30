@@ -1,0 +1,22 @@
+/* here
+    /* and now
+    */
+*/
+main(argc, argv){
+    if (argc >= 5) // u
+    then { // can
+        write 5 ** 4.0; // run
+    } else {
+        // but
+    }
+
+    while(false) do { // you
+        main(argc, argv); // cant
+    }
+
+}
+
+read argc;
+read argv;
+main(argc, argv /*hide */);
+foo();

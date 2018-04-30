@@ -1,0 +1,7 @@
+// lexical errors
+foo() {
+    x := $1;
+    1_b := x ;
+}
+
+foo();

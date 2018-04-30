@@ -1,0 +1,17 @@
+foo1 (a, b, c) {
+    a := b ** 2 ** 3;
+    a := b + 2 + 3;
+    a := b + c;
+    write ((a));
+}
+
+foo2(){
+    // void
+}
+
+a := 3;
+{
+    b := 2;
+}
+read c;
+foo1 (a, b, c);
