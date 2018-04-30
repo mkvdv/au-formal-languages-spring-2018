@@ -1,17 +1,17 @@
 # au-formal-languages-spring-2018
 
-## Lexer
-Я добавил целочиселнные литералы, ибо в примере в задании они есть, 
-и они не подходят под требования для floating literals из java.
+## Parser
+Добавлена запятая, чтобы поддержать список аргументов функции.
+Программа может быть пустой (это валидно исходя из задания, P = {D*, S}, а S = S* | ...)
 
-Тестовые файлы в `src/main/resources/ok` и `src/main/resources/fails`.
+Тестовые файлы в `src/main/parser_tests/resources/ok` и `src/main/resources/parser_tests/fail`.
 
 
 ### Сборка и запуск
 Требования:
 * Java 8 (openjdk ставится скриптом, если у вас Ubuntu)
 * gradle (и он тоже)
-* ANTLR4 (если нужно заново сгененрировать L_Lexer.java -- он тоже ставится скриптом) `теперь он качается не через apt`
+* ANTLR4  теперь он качается __не__ через apt
 
 ```
 chmod +x install_java_gradle_antlr.sh
