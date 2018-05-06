@@ -35,6 +35,11 @@ public class MyParseTreePrinter {
 
     private void printTerminal(TerminalNode r, String margin) {
         TokenPrintable tok = LexerWrapper.getPrintableToken(r.getSymbol());
+        if (tok.realToken.getType() == L_Lexer.LP || tok.realToken.getType() == L_Lexer.RP
+                || tok.realToken.getType() == L_Lexer.COMMA || tok.realToken.getType() == L_Lexer.LBR
+                || tok.realToken.getType() == L_Lexer.RBR || tok.realToken.getType() == L_Lexer.SEMI) {
+            return;
+        }
         sb.append(margin + tok.getText() + '\n');
 
     }

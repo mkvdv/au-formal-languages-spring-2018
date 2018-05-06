@@ -6,12 +6,14 @@ abstract class TokenPrintable {
     protected int ixCharBegin, ixCharEnd, lineno;
     protected String type;
     protected String text;
+    protected Token realToken;
 
     TokenPrintable(Token tok) {
         lineno = tok.getLine();
         ixCharBegin = tok.getCharPositionInLine();
         ixCharEnd = tok.getCharPositionInLine() + tok.getText().length();
         type = L_Lexer.VOCABULARY.getSymbolicName(tok.getType());
+        realToken = tok;
     }
 
     void print() {
