@@ -102,6 +102,10 @@ public class LexerWrapper {
             text = String.format("%s(%s, %d, %d, %d)",
                     type, value, lineno, ixCharBegin, ixCharEnd);
         }
+
+        String getValue() {
+            return value;
+        }
     }
 
     static class TokenLineComment extends TokenPrintable {

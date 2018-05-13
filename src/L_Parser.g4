@@ -50,11 +50,15 @@ statements
 
 statement
     :   ID ASSIGN expr SEMI
+    |   ID ADD ADD SEMI     // sugar
+    |   ID MINUS MINUS SEMI     // sugar
+    |   ID COMMA ID ASSIGN expr COMMA expr SEMI     // sugar
     |   call SEMI
     |   WRITE expr SEMI
     |   READ ID SEMI
     |   WHILE LP expr RP DO LBR statements RBR                  // while(expr) do {}
     |   IF LP expr RP THEN LBR statements RBR ELSE LBR statements RBR // if (e) then {} else {}
+    |   IF LP expr RP THEN LBR statements RBR     // sugar
     ;
 
 literal

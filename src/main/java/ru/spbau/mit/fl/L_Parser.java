@@ -35,7 +35,7 @@ public class L_Parser extends Parser {
     @Deprecated
     public static final String[] tokenNames;
     public static final String _serializedATN =
-            "\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&\u0085\4\2\t\2\4" +
+            "\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&\u009f\4\2\t\2\4" +
                     "\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t" +
                     "\13\3\2\7\2\30\n\2\f\2\16\2\33\13\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3" +
                     "\3\3\3\3\4\3\4\3\4\3\4\7\4+\n\4\f\4\16\4.\13\4\5\4\60\n\4\3\5\3\5\3\6" +
@@ -43,31 +43,41 @@ public class L_Parser extends Parser {
                     "\3\b\3\b\3\b\3\b\3\b\3\b\3\b\7\bM\n\b\f\b\16\bP\13\b\3\t\3\t\3\t\7\tU" +
                     "\n\t\f\t\16\tX\13\t\5\tZ\n\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3" +
                     "\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n" +
-                    "\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\5\n\u0081\n\n\3\13\3\13\3\13\2\3" +
-                    "\16\f\2\4\6\b\n\f\16\20\22\24\2\4\5\2\20\21\23\25\27\36\4\2\n\13\16\17" +
-                    "\2\u0089\2\31\3\2\2\2\4\36\3\2\2\2\6/\3\2\2\2\b\61\3\2\2\2\n\63\3\2\2" +
-                    "\2\f\65\3\2\2\2\16B\3\2\2\2\20Y\3\2\2\2\22\u0080\3\2\2\2\24\u0082\3\2" +
-                    "\2\2\26\30\5\4\3\2\27\26\3\2\2\2\30\33\3\2\2\2\31\27\3\2\2\2\31\32\3\2" +
-                    "\2\2\32\34\3\2\2\2\33\31\3\2\2\2\34\35\5\20\t\2\35\3\3\2\2\2\36\37\7%" +
-                    "\2\2\37 \7\37\2\2 !\5\6\4\2!\"\7 \2\2\"#\7#\2\2#$\5\20\t\2$%\7$\2\2%\5" +
-                    "\3\2\2\2&\60\3\2\2\2\',\7%\2\2()\7\"\2\2)+\7%\2\2*(\3\2\2\2+.\3\2\2\2" +
-                    ",*\3\2\2\2,-\3\2\2\2-\60\3\2\2\2.,\3\2\2\2/&\3\2\2\2/\'\3\2\2\2\60\7\3" +
-                    "\2\2\2\61\62\t\2\2\2\62\t\3\2\2\2\63\64\7\22\2\2\64\13\3\2\2\2\65\66\7" +
-                    "%\2\2\66\67\7\37\2\2\678\5\6\4\289\7 \2\29\r\3\2\2\2:;\b\b\1\2;C\5\f\7" +
-                    "\2<C\7%\2\2=C\5\24\13\2>?\7\37\2\2?@\5\16\b\2@A\7 \2\2AC\3\2\2\2B:\3\2" +
-                    "\2\2B<\3\2\2\2B=\3\2\2\2B>\3\2\2\2CN\3\2\2\2DE\f\5\2\2EF\5\n\6\2FG\5\16" +
-                    "\b\5GM\3\2\2\2HI\f\4\2\2IJ\5\b\5\2JK\5\16\b\5KM\3\2\2\2LD\3\2\2\2LH\3" +
-                    "\2\2\2MP\3\2\2\2NL\3\2\2\2NO\3\2\2\2O\17\3\2\2\2PN\3\2\2\2QZ\3\2\2\2R" +
-                    "V\5\22\n\2SU\5\22\n\2TS\3\2\2\2UX\3\2\2\2VT\3\2\2\2VW\3\2\2\2WZ\3\2\2" +
-                    "\2XV\3\2\2\2YQ\3\2\2\2YR\3\2\2\2Z\21\3\2\2\2[\\\7%\2\2\\]\7\26\2\2]^\5" +
-                    "\16\b\2^_\7!\2\2_\u0081\3\2\2\2`a\5\f\7\2ab\7!\2\2b\u0081\3\2\2\2cd\7" +
-                    "\t\2\2de\5\16\b\2ef\7!\2\2f\u0081\3\2\2\2gh\7\b\2\2hi\7%\2\2i\u0081\7" +
-                    "!\2\2jk\7\6\2\2kl\7\37\2\2lm\5\16\b\2mn\7 \2\2no\7\7\2\2op\7#\2\2pq\5" +
-                    "\20\t\2qr\7$\2\2r\u0081\3\2\2\2st\7\3\2\2tu\7\37\2\2uv\5\16\b\2vw\7 \2" +
-                    "\2wx\7\4\2\2xy\7#\2\2yz\5\20\t\2z{\7$\2\2{|\7\5\2\2|}\7#\2\2}~\5\20\t" +
-                    "\2~\177\7$\2\2\177\u0081\3\2\2\2\u0080[\3\2\2\2\u0080`\3\2\2\2\u0080c" +
-                    "\3\2\2\2\u0080g\3\2\2\2\u0080j\3\2\2\2\u0080s\3\2\2\2\u0081\23\3\2\2\2" +
-                    "\u0082\u0083\t\3\2\2\u0083\25\3\2\2\2\13\31,/BLNVY\u0080";
+                    "\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3" +
+                    "\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n" +
+                    "\5\n\u009b\n\n\3\13\3\13\3\13\2\3\16\f\2\4\6\b\n\f\16\20\22\24\2\4\5\2" +
+                    "\20\21\23\25\27\36\4\2\n\13\16\17\2\u00a7\2\31\3\2\2\2\4\36\3\2\2\2\6" +
+                    "/\3\2\2\2\b\61\3\2\2\2\n\63\3\2\2\2\f\65\3\2\2\2\16B\3\2\2\2\20Y\3\2\2" +
+                    "\2\22\u009a\3\2\2\2\24\u009c\3\2\2\2\26\30\5\4\3\2\27\26\3\2\2\2\30\33" +
+                    "\3\2\2\2\31\27\3\2\2\2\31\32\3\2\2\2\32\34\3\2\2\2\33\31\3\2\2\2\34\35" +
+                    "\5\20\t\2\35\3\3\2\2\2\36\37\7%\2\2\37 \7\37\2\2 !\5\6\4\2!\"\7 \2\2\"" +
+                    "#\7#\2\2#$\5\20\t\2$%\7$\2\2%\5\3\2\2\2&\60\3\2\2\2\',\7%\2\2()\7\"\2" +
+                    "\2)+\7%\2\2*(\3\2\2\2+.\3\2\2\2,*\3\2\2\2,-\3\2\2\2-\60\3\2\2\2.,\3\2" +
+                    "\2\2/&\3\2\2\2/\'\3\2\2\2\60\7\3\2\2\2\61\62\t\2\2\2\62\t\3\2\2\2\63\64" +
+                    "\7\22\2\2\64\13\3\2\2\2\65\66\7%\2\2\66\67\7\37\2\2\678\5\6\4\289\7 \2" +
+                    "\29\r\3\2\2\2:;\b\b\1\2;C\5\f\7\2<C\7%\2\2=C\5\24\13\2>?\7\37\2\2?@\5" +
+                    "\16\b\2@A\7 \2\2AC\3\2\2\2B:\3\2\2\2B<\3\2\2\2B=\3\2\2\2B>\3\2\2\2CN\3" +
+                    "\2\2\2DE\f\5\2\2EF\5\n\6\2FG\5\16\b\5GM\3\2\2\2HI\f\4\2\2IJ\5\b\5\2JK" +
+                    "\5\16\b\5KM\3\2\2\2LD\3\2\2\2LH\3\2\2\2MP\3\2\2\2NL\3\2\2\2NO\3\2\2\2" +
+                    "O\17\3\2\2\2PN\3\2\2\2QZ\3\2\2\2RV\5\22\n\2SU\5\22\n\2TS\3\2\2\2UX\3\2" +
+                    "\2\2VT\3\2\2\2VW\3\2\2\2WZ\3\2\2\2XV\3\2\2\2YQ\3\2\2\2YR\3\2\2\2Z\21\3" +
+                    "\2\2\2[\\\7%\2\2\\]\7\26\2\2]^\5\16\b\2^_\7!\2\2_\u009b\3\2\2\2`a\7%\2" +
+                    "\2ab\7\20\2\2bc\7\20\2\2c\u009b\7!\2\2de\7%\2\2ef\7\21\2\2fg\7\21\2\2" +
+                    "g\u009b\7!\2\2hi\7%\2\2ij\7\"\2\2jk\7%\2\2kl\7\26\2\2lm\5\16\b\2mn\7\"" +
+                    "\2\2no\5\16\b\2op\7!\2\2p\u009b\3\2\2\2qr\5\f\7\2rs\7!\2\2s\u009b\3\2" +
+                    "\2\2tu\7\t\2\2uv\5\16\b\2vw\7!\2\2w\u009b\3\2\2\2xy\7\b\2\2yz\7%\2\2z" +
+                    "\u009b\7!\2\2{|\7\6\2\2|}\7\37\2\2}~\5\16\b\2~\177\7 \2\2\177\u0080\7" +
+                    "\7\2\2\u0080\u0081\7#\2\2\u0081\u0082\5\20\t\2\u0082\u0083\7$\2\2\u0083" +
+                    "\u009b\3\2\2\2\u0084\u0085\7\3\2\2\u0085\u0086\7\37\2\2\u0086\u0087\5" +
+                    "\16\b\2\u0087\u0088\7 \2\2\u0088\u0089\7\4\2\2\u0089\u008a\7#\2\2\u008a" +
+                    "\u008b\5\20\t\2\u008b\u008c\7$\2\2\u008c\u008d\7\5\2\2\u008d\u008e\7#" +
+                    "\2\2\u008e\u008f\5\20\t\2\u008f\u0090\7$\2\2\u0090\u009b\3\2\2\2\u0091" +
+                    "\u0092\7\3\2\2\u0092\u0093\7\37\2\2\u0093\u0094\5\16\b\2\u0094\u0095\7" +
+                    " \2\2\u0095\u0096\7\4\2\2\u0096\u0097\7#\2\2\u0097\u0098\5\20\t\2\u0098" +
+                    "\u0099\7$\2\2\u0099\u009b\3\2\2\2\u009a[\3\2\2\2\u009a`\3\2\2\2\u009a" +
+                    "d\3\2\2\2\u009ah\3\2\2\2\u009aq\3\2\2\2\u009at\3\2\2\2\u009ax\3\2\2\2" +
+                    "\u009a{\3\2\2\2\u009a\u0084\3\2\2\2\u009a\u0091\3\2\2\2\u009b\23\3\2\2" +
+                    "\2\u009c\u009d\t\3\2\2\u009d\25\3\2\2\2\13\31,/BLNVY\u009a";
     public static final ATN _ATN =
             new ATNDeserializer().deserialize(_serializedATN.toCharArray());
     protected static final DFA[] _decisionToDFA;
@@ -490,7 +500,7 @@ public class L_Parser extends Parser {
         StatementContext _localctx = new StatementContext(_ctx, getState());
         enterRule(_localctx, 16, RULE_statement);
         try {
-            setState(126);
+            setState(152);
             _errHandler.sync(this);
             switch (getInterpreter().adaptivePredict(_input, 8, _ctx)) {
                 case 1:
@@ -510,80 +520,148 @@ public class L_Parser extends Parser {
                     enterOuterAlt(_localctx, 2);
                 {
                     setState(94);
-                    call();
+                    match(ID);
                     setState(95);
+                    match(ADD);
+                    setState(96);
+                    match(ADD);
+                    setState(97);
                     match(SEMI);
                 }
                 break;
                 case 3:
                     enterOuterAlt(_localctx, 3);
                 {
-                    setState(97);
-                    match(WRITE);
                     setState(98);
-                    expr(0);
+                    match(ID);
                     setState(99);
+                    match(MINUS);
+                    setState(100);
+                    match(MINUS);
+                    setState(101);
                     match(SEMI);
                 }
                 break;
                 case 4:
                     enterOuterAlt(_localctx, 4);
                 {
-                    setState(101);
-                    match(READ);
                     setState(102);
                     match(ID);
                     setState(103);
+                    match(COMMA);
+                    setState(104);
+                    match(ID);
+                    setState(105);
+                    match(ASSIGN);
+                    setState(106);
+                    expr(0);
+                    setState(107);
+                    match(COMMA);
+                    setState(108);
+                    expr(0);
+                    setState(109);
                     match(SEMI);
                 }
                 break;
                 case 5:
                     enterOuterAlt(_localctx, 5);
                 {
-                    setState(104);
-                    match(WHILE);
-                    setState(105);
-                    match(LP);
-                    setState(106);
-                    expr(0);
-                    setState(107);
-                    match(RP);
-                    setState(108);
-                    match(DO);
-                    setState(109);
-                    match(LBR);
-                    setState(110);
-                    statements();
                     setState(111);
-                    match(RBR);
+                    call();
+                    setState(112);
+                    match(SEMI);
                 }
                 break;
                 case 6:
                     enterOuterAlt(_localctx, 6);
                 {
-                    setState(113);
-                    match(IF);
                     setState(114);
-                    match(LP);
+                    match(WRITE);
                     setState(115);
                     expr(0);
                     setState(116);
-                    match(RP);
-                    setState(117);
-                    match(THEN);
+                    match(SEMI);
+                }
+                break;
+                case 7:
+                    enterOuterAlt(_localctx, 7);
+                {
                     setState(118);
-                    match(LBR);
+                    match(READ);
                     setState(119);
-                    statements();
+                    match(ID);
                     setState(120);
-                    match(RBR);
+                    match(SEMI);
+                }
+                break;
+                case 8:
+                    enterOuterAlt(_localctx, 8);
+                {
                     setState(121);
-                    match(ELSE);
+                    match(WHILE);
                     setState(122);
-                    match(LBR);
+                    match(LP);
                     setState(123);
-                    statements();
+                    expr(0);
                     setState(124);
+                    match(RP);
+                    setState(125);
+                    match(DO);
+                    setState(126);
+                    match(LBR);
+                    setState(127);
+                    statements();
+                    setState(128);
+                    match(RBR);
+                }
+                break;
+                case 9:
+                    enterOuterAlt(_localctx, 9);
+                {
+                    setState(130);
+                    match(IF);
+                    setState(131);
+                    match(LP);
+                    setState(132);
+                    expr(0);
+                    setState(133);
+                    match(RP);
+                    setState(134);
+                    match(THEN);
+                    setState(135);
+                    match(LBR);
+                    setState(136);
+                    statements();
+                    setState(137);
+                    match(RBR);
+                    setState(138);
+                    match(ELSE);
+                    setState(139);
+                    match(LBR);
+                    setState(140);
+                    statements();
+                    setState(141);
+                    match(RBR);
+                }
+                break;
+                case 10:
+                    enterOuterAlt(_localctx, 10);
+                {
+                    setState(143);
+                    match(IF);
+                    setState(144);
+                    match(LP);
+                    setState(145);
+                    expr(0);
+                    setState(146);
+                    match(RP);
+                    setState(147);
+                    match(THEN);
+                    setState(148);
+                    match(LBR);
+                    setState(149);
+                    statements();
+                    setState(150);
                     match(RBR);
                 }
                 break;
@@ -605,7 +683,7 @@ public class L_Parser extends Parser {
         try {
             enterOuterAlt(_localctx, 1);
             {
-                setState(128);
+                setState(154);
                 _la = _input.LA(1);
                 if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << TRUE) | (1L << FALSE) | (1L << DecimalFloatingPointLiteral) | (1L << DecimalIntegerLiteral))) != 0))) {
                     _errHandler.recoverInline(this);
@@ -988,20 +1066,52 @@ public class L_Parser extends Parser {
             super(parent, invokingState);
         }
 
-        public TerminalNode ID() {
-            return getToken(L_Parser.ID, 0);
+        public List<TerminalNode> ID() {
+            return getTokens(L_Parser.ID);
+        }
+
+        public TerminalNode ID(int i) {
+            return getToken(L_Parser.ID, i);
         }
 
         public TerminalNode ASSIGN() {
             return getToken(L_Parser.ASSIGN, 0);
         }
 
-        public ExprContext expr() {
-            return getRuleContext(ExprContext.class, 0);
+        public List<ExprContext> expr() {
+            return getRuleContexts(ExprContext.class);
+        }
+
+        public ExprContext expr(int i) {
+            return getRuleContext(ExprContext.class, i);
         }
 
         public TerminalNode SEMI() {
             return getToken(L_Parser.SEMI, 0);
+        }
+
+        public List<TerminalNode> ADD() {
+            return getTokens(L_Parser.ADD);
+        }
+
+        public TerminalNode ADD(int i) {
+            return getToken(L_Parser.ADD, i);
+        }
+
+        public List<TerminalNode> MINUS() {
+            return getTokens(L_Parser.MINUS);
+        }
+
+        public TerminalNode MINUS(int i) {
+            return getToken(L_Parser.MINUS, i);
+        }
+
+        public List<TerminalNode> COMMA() {
+            return getTokens(L_Parser.COMMA);
+        }
+
+        public TerminalNode COMMA(int i) {
+            return getToken(L_Parser.COMMA, i);
         }
 
         public CallContext call() {

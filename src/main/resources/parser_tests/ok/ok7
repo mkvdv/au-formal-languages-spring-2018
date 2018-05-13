@@ -1,0 +1,8 @@
+if(x == 5) then {
+    x := 6;
+} else { }
+
+// the same in tree
+if (x == 5) then {
+    x := 6;
+}
